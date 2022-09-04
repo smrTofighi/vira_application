@@ -4,15 +4,15 @@ import 'package:vira_app/constant/component.dart';
 import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/styles/textfield.dart';
 import 'package:vira_app/gen/assets.gen.dart';
-import 'package:vira_app/pages/main_page.dart';
-import 'package:vira_app/pages/signup_page.dart';
+import 'package:vira_app/views/main_view.dart';
+import 'package:vira_app/views/signup_view.dart';
 
 import '../constant/string.dart';
 import '../constant/styles/textstyle.dart';
 
 //! Libraries
-class LogInPage extends StatelessWidget {
-  const LogInPage({Key? key}) : super(key: key);
+class LogInView extends StatelessWidget {
+  const LogInView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +110,7 @@ class RowTextAndButtonSignup extends StatelessWidget {
         text: Strings.youDontHaveAnAccount,
         textButton: Strings.signupText,
         onPressed: (() {
-          Get.off(const SignUpPage());
+          Get.off(const SignUpView());
         }),
       ),
     );
@@ -131,7 +131,7 @@ class ElevatedButtonLogin extends StatelessWidget {
       child: ViraElevatedButton(
         text: Strings.loginText,
         onPressed: (() {
-          Get.offAll(MainPage());
+          Get.offAll(MainView());
         }),
       ),
     );

@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/gen/assets.gen.dart';
-import 'package:vira_app/pages/main_page.dart';
+import 'package:vira_app/views/main_view.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+class SplashView extends StatefulWidget {
+  const SplashView({Key? key}) : super(key: key);
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) =>  MainPage()));
+          .pushReplacement(MaterialPageRoute(builder: (context) =>  MainView()));
     });
 
   }

@@ -6,8 +6,8 @@ import 'package:vira_app/gen/assets.gen.dart';
 
 import '../constant/styles/textstyle.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key, required this.size, required this.textTheme})
+class ProfileView extends StatelessWidget {
+  const ProfileView({Key? key, required this.size, required this.textTheme})
       : super(key: key);
   //* Constructor -----------------
 

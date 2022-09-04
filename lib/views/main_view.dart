@@ -6,15 +6,15 @@ import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/string.dart';
 import 'package:vira_app/constant/styles/textstyle.dart';
 import 'package:vira_app/gen/assets.gen.dart';
-import 'package:vira_app/pages/login_page.dart';
-import 'package:vira_app/pages/profile_page.dart';
-import 'home_page.dart';
+import 'package:vira_app/views/login_view.dart';
+import 'package:vira_app/views/profile_view.dart';
+import 'home_view.dart';
 //! Libraries ---------------------
 
 // is the key for open drawer
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-class MainPage extends StatelessWidget {
+class MainView extends StatelessWidget {
   RxInt selectedIndexPage = 0.obs;
 
   @override
@@ -114,11 +114,11 @@ class MainPage extends StatelessWidget {
                 () => IndexedStack(
                   index: selectedIndexPage.value,
                   children: [
-                    HomePage(size: size, textTheme: textTheme),
+                    HomeView(size: size, textTheme: textTheme),
                     Container(),
                     Container(),
                     Container(),
-                    ProfilePage(size: size, textTheme: textTheme),
+                    ProfileView(size: size, textTheme: textTheme),
                   ],
                 ),
               ),
@@ -250,7 +250,7 @@ class BottomNavigation extends StatelessWidget {
                           Strings.pleaseLoginForCreateArticleText,
                           Strings.loginText, (() {
                         Get.back();
-                        Get.to(const LogInPage());
+                        Get.to(const LogInView());
                       }));
                     },
                     icon: ImageIcon(

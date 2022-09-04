@@ -7,8 +7,8 @@ import '../models/data_models.dart';
 //! Imports  -----------------------
 
 
-class HomePage extends StatelessWidget {
-  const HomePage({
+class HomeView extends StatelessWidget {
+  const HomeView({
     Key? key,
     required this.size,
     required this.textTheme,

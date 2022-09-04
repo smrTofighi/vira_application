@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:vira_app/constant/theme.dart';
-import 'package:vira_app/pages/splash_page.dart';
+import 'package:vira_app/views/splash_view.dart';
 import 'package:get/get.dart';
 //! Libaries
 
@@ -47,7 +47,7 @@ class ViraApp extends StatelessWidget {
       theme: themeData,
       
       //? --------------------------
-      home: const SplashPage(),
+      home: const SplashView(),
     );
   }
 }
