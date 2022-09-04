@@ -21,7 +21,7 @@ var themeData = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     
     style: ElevatedButton.styleFrom(
-      primary: SolidColors.themeColor,
+      backgroundColor: SolidColors.themeColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -33,7 +33,7 @@ var themeData = ThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        primary: SolidColors.themeColor
+        backgroundColor: SolidColors.themeColor
         // backgroundColor: MaterialStateProperty.resolveWith(
         //   (states) {
         //     if (states.contains(MaterialState.pressed)) {

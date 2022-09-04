@@ -5,11 +5,11 @@ import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/styles/textfield.dart';
 import 'package:vira_app/gen/assets.gen.dart';
 import 'package:vira_app/views/login_view.dart';
-import 'package:vira_app/views/main_view.dart';
+import 'package:vira_app/views/main/main_view.dart';
 
 import '../constant/string.dart';
 import '../constant/styles/textstyle.dart';
-//! Libaries
+
 
 class SignUpView extends StatelessWidget {
   const SignUpView({Key? key}) : super(key: key);

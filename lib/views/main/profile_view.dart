@@ -4,16 +4,14 @@ import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/string.dart';
 import 'package:vira_app/gen/assets.gen.dart';
 
-import '../constant/styles/textstyle.dart';
+import '../../constant/styles/textstyle.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key, required this.size, required this.textTheme})
       : super(key: key);
-  //* Constructor -----------------
 
   final TextTheme textTheme;
   final Size size;
-  //* Variables -------------------
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +32,6 @@ class ProfileView extends StatelessWidget {
     );
   }
 }
-
 
 //! Widgets ---------------
 class PersonalInfo extends StatelessWidget {
@@ -136,12 +133,14 @@ class BottomScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 24.0),
         child: Column(
           children: [
-            ViraTextAndButton(title: Strings.myFavoriteArticleText, onTap: () {}),
+            ViraTextAndButton(
+                title: Strings.myFavoriteArticleText, onTap: () {}),
             //? -----------------------------
 
-            ViraTextAndButton(title: Strings.myFavoritePadCastText, onTap: () {}),
+            ViraTextAndButton(
+                title: Strings.myFavoritePadCastText, onTap: () {}),
             //? -----------------------------
-            
+
             ViraTextAndButton(title: Strings.logOutText, onTap: () {}),
             //? -----------------------------
           ],

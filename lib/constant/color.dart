@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SolidColors{
+class SolidColors {
   static const Color themeColor = Color(0xff5d01d2);
   static const Color hashtagBorderColor = Color.fromARGB(255, 60, 0, 139);
   static const Color iconWhite = Color(0xFFFFFFFF);
@@ -22,13 +22,13 @@ class SolidColors{
   static const Color facebookColor = Color(0xff4267B2);
 }
 
-class GradiantColors{
+class GradiantColors {
   static const List<Color> blogPost = [
     Color.fromARGB(255, 0, 0, 0),
     Color.fromARGB(0, 0, 0, 0)
   ];
 }
 
-class ShadowColors{
-  static Color shadowNav = const  Color(0xFF000000).withOpacity(0.5);
+class ShadowColors {
+  static Color shadowNav = const Color(0xFF000000).withOpacity(0.5);
 }

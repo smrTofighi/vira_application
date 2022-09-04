@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vira_app/constant/color.dart';
-import 'string.dart';
 import 'styles/textstyle.dart';
-import '../gen/assets.gen.dart';
 import '../models/data_models.dart';
 
 
 
-//? is the divider for drawer
+//? this is the divider for drawer
 class ViraDividerDrawer extends StatelessWidget {
   const ViraDividerDrawer({Key? key}) : super(key: key);
 
@@ -21,7 +19,7 @@ class ViraDividerDrawer extends StatelessWidget {
   }
 }
 
-//? is the list tile for drawer
+//? this is the list tile for drawer
 class ViraListTileDrawer extends StatelessWidget {
   const ViraListTileDrawer(
       {Key? key, required this.title, required this.icon, required this.onTap})
@@ -55,7 +53,7 @@ class ViraListTileDrawer extends StatelessWidget {
   }
 }
 
-//? is the main tags for create in the list
+//? this is the main tags for create in the list
 class ViraMainTags extends StatelessWidget {
   const ViraMainTags({Key? key, required this.index}) : super(key: key);
   final int index;
@@ -87,7 +85,7 @@ class ViraMainTags extends StatelessWidget {
   }
 }
 
-//? is the elevated button with icons => for signup with google
+//? this is the elevated button with icons => for signup with google
 class ViraElevatedButtonIcon extends StatelessWidget {
   const ViraElevatedButtonIcon({
     Key? key,
@@ -107,13 +105,13 @@ class ViraElevatedButtonIcon extends StatelessWidget {
         AssetImage(iconPath),
       ),
       style: ElevatedButton.styleFrom(
-        primary: color,
+        backgroundColor: color,
       ),
     );
   }
 }
 
-//? is the textfield
+//? this is the textfield
 class ViraTextField extends StatelessWidget {
   const ViraTextField(
       {Key? key, required this.cursorColor, required this.decoration})
@@ -130,7 +128,7 @@ class ViraTextField extends StatelessWidget {
   }
 }
 
-//? is the elevated button
+//? this is the elevated button
 class ViraElevatedButton extends StatelessWidget {
   const ViraElevatedButton(
       {Key? key, required this.text, required this.onPressed})
@@ -149,7 +147,7 @@ class ViraElevatedButton extends StatelessWidget {
   }
 }
 
-//? is the Row with text and text button => for example in signup screen you have an account? login
+//? this is the Row with text and text button => for example in signup screen you have an account? login
 class ViraRowTextAndButtonText extends StatelessWidget {
   const ViraRowTextAndButtonText(
       {Key? key,
@@ -181,7 +179,7 @@ class ViraRowTextAndButtonText extends StatelessWidget {
   }
 }
 
-//? is the text and button for profile screen
+//? this is the text and button for profile screen
 class ViraTextAndButton extends StatelessWidget {
   const ViraTextAndButton({Key? key, required this.title, required this.onTap})
       : super(key: key);

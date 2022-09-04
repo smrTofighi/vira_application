@@ -7,9 +7,8 @@ import 'package:vira_app/constant/string.dart';
 import 'package:vira_app/constant/styles/textstyle.dart';
 import 'package:vira_app/gen/assets.gen.dart';
 import 'package:vira_app/views/login_view.dart';
-import 'package:vira_app/views/profile_view.dart';
+import 'package:vira_app/views/main/profile_view.dart';
 import 'home_view.dart';
-//! Libraries ---------------------
 
 // is the key for open drawer
 final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -22,7 +21,6 @@ class MainView extends StatelessWidget {
     var textTheme = Theme.of(context).textTheme;
     var size = MediaQuery.of(context).size;
 
-    //! Return ------------------
     return SafeArea(
       child: Scaffold(
         //? key
@@ -48,7 +46,6 @@ class MainView extends StatelessWidget {
                       title: 'معرفی به دوستان',
                       icon: Assets.icons.share.path,
                       onTap: () {
-                        print('object');
                         Share.share(Strings.shareText);
                       }),
                   ViraListTileDrawer(

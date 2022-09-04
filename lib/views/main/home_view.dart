@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/component.dart';
 import 'package:vira_app/constant/string.dart';
 import 'package:vira_app/constant/styles/textstyle.dart';
-import '../constant/color.dart';
-import '../models/data_models.dart';
-//! Imports  -----------------------
+
+import '../../models/data_models.dart';
+
 
 
 class HomeView extends StatelessWidget {
@@ -13,15 +14,15 @@ class HomeView extends StatelessWidget {
     required this.size,
     required this.textTheme,
   }) : super(key: key);
-  //* Constructor ---------------
+
 
   final TextTheme textTheme;
   final Size size;
-  //* Variables -----------------
+
   
   @override
   Widget build(BuildContext context) {
-    //? Return ------------------
+
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(

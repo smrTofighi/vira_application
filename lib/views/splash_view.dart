@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/gen/assets.gen.dart';
-import 'package:vira_app/views/main_view.dart';
+
+import 'main/main_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);

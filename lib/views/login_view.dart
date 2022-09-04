@@ -4,13 +4,12 @@ import 'package:vira_app/constant/component.dart';
 import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/styles/textfield.dart';
 import 'package:vira_app/gen/assets.gen.dart';
-import 'package:vira_app/views/main_view.dart';
 import 'package:vira_app/views/signup_view.dart';
-
 import '../constant/string.dart';
 import '../constant/styles/textstyle.dart';
+import 'main/main_view.dart';
 
-//! Libraries
+
 class LogInView extends StatelessWidget {
   const LogInView({Key? key}) : super(key: key);
 
@@ -117,7 +116,7 @@ class RowTextAndButtonSignup extends StatelessWidget {
   }
 }
 
-//? is the login button
+//? this is the login button
 class ElevatedButtonLogin extends StatelessWidget {
   const ElevatedButtonLogin({
     Key? key,
@@ -138,7 +137,7 @@ class ElevatedButtonLogin extends StatelessWidget {
   }
 }
 
-//? is the login button with google and facebook
+//? this is the login button with google and facebook
 class RowButtonsGoogleAndFacebook extends StatelessWidget {
   const RowButtonsGoogleAndFacebook({
     Key? key,
@@ -184,7 +183,7 @@ class RowButtonsGoogleAndFacebook extends StatelessWidget {
   }
 }
 
-//? is the following text
+//? this is the following text
 class TextFollowing extends StatelessWidget {
   const TextFollowing({
     Key? key,
