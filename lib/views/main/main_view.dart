@@ -13,8 +13,11 @@ import 'home_view.dart';
 // is the key for open drawer
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
+// ignore: must_be_immutable
 class MainView extends StatelessWidget {
   RxInt selectedIndexPage = 0.obs;
+
+  MainView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,7 @@ class MainView extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        //? key
         key: _key,
-        //? Drawer
         drawer: Drawer(
           backgroundColor: SolidColors.appBar,
           child: SafeArea(
@@ -69,12 +70,9 @@ class MainView extends StatelessWidget {
             ),
           ),
         ),
-        //? AppBar --------------
         appBar: AppBar(
           backgroundColor: SolidColors.appBar,
           automaticallyImplyLeading: false,
-
-          //? Title -------------
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -102,7 +100,6 @@ class MainView extends StatelessWidget {
             ],
           ),
         ),
-        //? Body ----------------
         body: Stack(
           children: [
             //? Screen  ---------
@@ -123,16 +120,18 @@ class MainView extends StatelessWidget {
 
             //? Bottom Nav ------
             Positioned(
-              bottom: 20,
-              right: 12,
-              left: 12,
-              child: Obx(() => BottomNavigation(
-                    size: size,
-                    index: selectedIndexPage.value,
-                    changeScreen: (value) {
-                      selectedIndexPage.value = value;
-                    },
-                  )),
+              bottom: 0,
+              right: 0,
+              left: 0,
+              child: Obx(
+                () => BottomNavigation(
+                  size: size,
+                  index: selectedIndexPage.value,
+                  changeScreen: (value) {
+                    selectedIndexPage.value = value;
+                  },
+                ),
+              ),
             ),
           ],
         ),
@@ -149,17 +148,15 @@ class BottomNavigation extends StatelessWidget {
       required this.index,
       required this.changeScreen})
       : super(key: key);
-  //* Constructor
 
   final Size size;
   final int index;
   final Function(int) changeScreen;
-  //* Variables
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 20,right: 20,bottom: 28),
       child: Container(
         decoration: BoxDecoration(
           color: SolidColors.bottomNavoff,

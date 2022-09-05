@@ -20,6 +20,9 @@ class SolidColors {
   static const Color textWhiteColor = Colors.white;
   static const Color googleColor = Color(0xffDB4437);
   static const Color facebookColor = Color(0xff4267B2);
+  static const Color tagTextNewsSingleViewColor = Color(0xff228fe2);
+
+  static const Color textBlackColor = Colors.black;
 }
 
 class GradiantColors {

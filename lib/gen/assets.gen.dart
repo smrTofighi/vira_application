@@ -24,6 +24,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/icons/apple.png');
 
+  /// File path: assets/icons/arrow-right.png
+  AssetGenImage get arrowRight =>
+      const AssetGenImage('assets/icons/arrow-right.png');
+
   /// File path: assets/icons/bookmark-fill.png
   AssetGenImage get bookmarkFill =>
       const AssetGenImage('assets/icons/bookmark-fill.png');
@@ -56,8 +60,19 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
 
+  /// File path: assets/icons/like-fill.png
+  AssetGenImage get likeFill =>
+      const AssetGenImage('assets/icons/like-fill.png');
+
+  /// File path: assets/icons/like.png
+  AssetGenImage get like => const AssetGenImage('assets/icons/like.png');
+
   /// File path: assets/icons/logout.png
   AssetGenImage get logout => const AssetGenImage('assets/icons/logout.png');
+
+  /// File path: assets/icons/menu-dots.png
+  AssetGenImage get menuDots =>
+      const AssetGenImage('assets/icons/menu-dots.png');
 
   /// File path: assets/icons/menu.png
   AssetGenImage get menu => const AssetGenImage('assets/icons/menu.png');

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:vira_app/constant/theme.dart';
+import 'package:vira_app/views/main/main_view.dart';
+import 'package:vira_app/views/news_single_view.dart';
 import 'package:vira_app/views/splash_view.dart';
 import 'package:get/get.dart';
 
@@ -34,7 +36,7 @@ class ViraApp extends StatelessWidget {
       ],
       locale: const Locale('fa', 'IR'),
       theme: themeData,
-      home: const SplashView(),
+      home: NewsSingleView(),
     );
   }
 }
