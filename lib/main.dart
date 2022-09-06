@@ -36,7 +36,7 @@ class ViraApp extends StatelessWidget {
       ],
       locale: const Locale('fa', 'IR'),
       theme: themeData,
-      home: NewsSingleView(),
+      home: MainView(),
     );
   }
 }

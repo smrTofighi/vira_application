@@ -1,10 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vira_app/constant/color.dart';
+import 'package:vira_app/constant/string.dart';
 import 'styles/textstyle.dart';
-import '../models/data_models.dart';
 
 
+Widget rowTextAndViewAll(String text) {
+  return Padding(
+    padding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Align(
+          alignment: Alignment.centerRight,
+          child: Text(
+            text,
+            style: TextStyles.styleHeadline,
+          ),
+        ),
+        Text(
+          Strings.viewAllText,
+          style: TextStyles.styleViewAllText,
+        )
+      ],
+    ),
+  );
+}
 
 //? this is the divider for drawer
 class ViraDividerDrawer extends StatelessWidget {
@@ -47,38 +68,6 @@ class ViraListTileDrawer extends StatelessWidget {
             ),
             Text(title, style: TextStyles.styleTitleDrawer)
           ],
-        ),
-      ),
-    );
-  }
-}
-
-//? this is the main tags for create in the list
-class ViraMainTags extends StatelessWidget {
-  const ViraMainTags({Key? key, required this.index}) : super(key: key);
-  final int index;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 60,
-        decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(25),
-            ),
-            border: Border.all(color: SolidColors.hashtagBorderColor),
-            color: SolidColors.hashTagColor),
-        child: Padding(
-          padding: const EdgeInsets.only(right: 20.0, left: 20.0),
-          child:Center(
-            child: Text(
-                tagList[index].title!,
-                style: const TextStyle(
-                  color: SolidColors.hashtagBorderColor
-                ),
-              ),
-          )
         ),
       ),
     );

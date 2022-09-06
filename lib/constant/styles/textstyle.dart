@@ -22,8 +22,8 @@ class TextStyles {
     color: SolidColors.mostTextColor,
   );
   static const TextStyle styleHeadline = TextStyle(
-    fontSize: 18,
-    fontFamily: 'Fanavari',
+    fontSize: 17,
+    fontFamily: 'Samim',
     fontWeight: FontWeight.bold,
     color: SolidColors.mostTextColor,
   );
@@ -110,4 +110,8 @@ class TextStyles {
       fontSize: 16,
       fontWeight: FontWeight.w700,
       color: SolidColors.tagTextNewsSingleViewColor);
+      static TextStyle styleViewAllText = TextStyle(
+        color: Colors.grey[800],
+        fontSize: 12
+      );
 }

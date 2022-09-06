@@ -89,7 +89,7 @@ class NewsSingleView extends StatelessWidget {
                           child: Text(newsSingle['description']),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 150,
                       )
                     ],

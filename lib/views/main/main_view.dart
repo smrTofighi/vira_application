@@ -108,7 +108,7 @@ class MainView extends StatelessWidget {
                 () => IndexedStack(
                   index: selectedIndexPage.value,
                   children: [
-                    HomeView(size: size, textTheme: textTheme),
+                    const HomeView(),
                     Container(),
                     Container(),
                     Container(),
@@ -328,12 +328,5 @@ void _showSnackBarLogin(BuildContext context, String message, String textButton,
     ),
   );
 
-  // Get.snackbar('نیاز به حساب کاربری', message,
-  //     mainButton: TextButton(
-  //       onPressed: onPressed,
-  //       child: Text(textButton)
-  //     ),
-  //   backgroundColor: SolidColors.snackBarColor,
-  //   snackPosition: SnackPosition.BOTTOM
-  // );
+
 }

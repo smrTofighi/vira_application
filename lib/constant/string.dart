@@ -18,7 +18,8 @@ class Strings {
   static const String youDontHaveAnAccount = 'حساب کاربری نداری؟';
   static const String youHaveAnAccount = 'حساب کاربری داری؟';
 
-
+  static const String relatedNewsText = 'خبر های مرتبط';
+  static const String viewAllText = 'نمایش همه';
 
   static const String shareText = """
 یه خبر خوب داریم...
