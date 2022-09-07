@@ -40,12 +40,19 @@ class $AssetsIconsGen {
   AssetGenImage get contactUs =>
       const AssetGenImage('assets/icons/contact-us.png');
 
+  /// File path: assets/icons/download.png
+  AssetGenImage get download =>
+      const AssetGenImage('assets/icons/download.png');
+
   /// File path: assets/icons/exit.png
   AssetGenImage get exit => const AssetGenImage('assets/icons/exit.png');
 
   /// File path: assets/icons/face-book.png
   AssetGenImage get faceBook =>
       const AssetGenImage('assets/icons/face-book.png');
+
+  /// File path: assets/icons/forward.png
+  AssetGenImage get forward => const AssetGenImage('assets/icons/forward.png');
 
   /// File path: assets/icons/google.png
   AssetGenImage get google => const AssetGenImage('assets/icons/google.png');
@@ -83,8 +90,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/paper.png
   AssetGenImage get paper => const AssetGenImage('assets/icons/paper.png');
 
+  /// File path: assets/icons/pause.png
+  AssetGenImage get pause => const AssetGenImage('assets/icons/pause.png');
+
+  /// File path: assets/icons/play.png
+  AssetGenImage get play => const AssetGenImage('assets/icons/play.png');
+
   /// File path: assets/icons/power.png
   AssetGenImage get power => const AssetGenImage('assets/icons/power.png');
+
+  /// File path: assets/icons/rewind.png
+  AssetGenImage get rewind => const AssetGenImage('assets/icons/rewind.png');
 
   /// File path: assets/icons/search-fill.png
   AssetGenImage get searchFill =>

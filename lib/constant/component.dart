@@ -5,7 +5,7 @@ import 'package:vira_app/constant/string.dart';
 import 'styles/textstyle.dart';
 
 
-Widget rowTextAndViewAll(String text) {
+Widget rowTextAndViewAll(String text, Function() onPressed) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
     child: Row(
@@ -18,10 +18,10 @@ Widget rowTextAndViewAll(String text) {
             style: TextStyles.styleHeadline,
           ),
         ),
-        Text(
+        TextButton(onPressed: onPressed, child: Text(
           Strings.viewAllText,
           style: TextStyles.styleViewAllText,
-        )
+        ),)
       ],
     ),
   );

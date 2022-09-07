@@ -1,8 +1,8 @@
 class Strings {
   //* Home Screen
   static const String howNewsText = "داغ ترین خبر ها";
-  static const String recentNewsText = "جدید ترین خبر ها";
-  static const String recentPadCastText = "جدید ترین پادکست ها";
+  static const String recentNewsText = "جدیدترین خبر ها";
+  static const String recentPadCastText = "جدیدترین پادکست ها";
   static const String pleaseLoginForCreateArticleText = "برای ایجاد مقاله ابتدا وارد حساب خود شوید";
 
   //* Profile Screen
@@ -20,6 +20,9 @@ class Strings {
 
   static const String relatedNewsText = 'خبر های مرتبط';
   static const String viewAllText = 'نمایش همه';
+
+  static const String newsText = 'خبرها';
+  static const String padcastText = 'پادکست ها';
 
   static const String shareText = """
 یه خبر خوب داریم...

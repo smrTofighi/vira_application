@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../color.dart';
@@ -107,11 +106,14 @@ class TextStyles {
     color: SolidColors.mostTextColor,
   );
   static const TextStyle styleTagText = TextStyle(
-      fontSize: 16,
+      fontSize: 12,
       fontWeight: FontWeight.w700,
       color: SolidColors.tagTextNewsSingleViewColor);
-      static TextStyle styleViewAllText = TextStyle(
-        color: Colors.grey[800],
-        fontSize: 12
-      );
+  static TextStyle styleViewAllText =
+      TextStyle(color: Colors.grey[800], fontSize: 12);
+
+  static const TextStyle styleTitleAppBar = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+  );
 }

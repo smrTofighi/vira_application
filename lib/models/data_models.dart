@@ -141,7 +141,7 @@ List<PadCastModel> padCastList = [
       imageUrl:
           'https://wallpapergram.ir/wp-img/WallpaperGram.IR_1617611385_3443.jpg',
       title: 'بررسی بازار موبایل',
-      recoder: 'سیدحمد رضاتوفیقی'),
+      recoder: 'سیدحمید رضاتوفیقی'),
   PadCastModel(
       id: 1,
       imageUrl:

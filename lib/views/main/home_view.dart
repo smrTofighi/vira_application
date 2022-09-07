@@ -4,15 +4,16 @@ import 'package:vira_app/constant/color.dart';
 import 'package:vira_app/constant/component.dart';
 import 'package:vira_app/constant/string.dart';
 import 'package:vira_app/constant/styles/textstyle.dart';
+import 'package:vira_app/views/news_list_view.dart';
 import 'package:vira_app/views/news_single_view.dart';
-
+import 'package:vira_app/views/padcast_single_view.dart';
+import 'package:vira_app/views/padcats_list_view.dart';
 import '../../models/data_models.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +36,19 @@ class HomeView extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          rowTextAndViewAll(Strings.recentNewsText),
+          rowTextAndViewAll(
+            Strings.recentNewsText,
+            () {
+              Get.to(const NewsListView());
+            },
+          ),
           recentNewsList(),
-          rowTextAndViewAll(Strings.recentPadCastText),
+          rowTextAndViewAll(
+            Strings.recentPadCastText,
+            () {
+              Get.to(const PadcatsListView());
+            },
+          ),
           recentPadCatList(),
 
           //? ----------------------------
@@ -49,59 +60,62 @@ class HomeView extends StatelessWidget {
     );
   }
 
-
   //? widgets
 
-    Widget hotText() {
+  Widget hotText() {
     return const Text(
-          Strings.howNewsText,
-          style: TextStyles.styleHotNews,
-        );
+      Strings.howNewsText,
+      style: TextStyles.styleHotNews,
+    );
   }
 
-
-  Widget recentPadCatList(){
+  Widget recentPadCatList() {
     return SizedBox(
       height: Get.height / 3.5,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemBuilder: ((context, index) {
-          return Padding(
-            padding: EdgeInsets.fromLTRB(
-                index == padCastList.length - 1 ? 16 : 4,
-                0,
-                index == 0 ? 16 : 4,
-                0),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: Get.height / 5.3,
-                    width: Get.width / 2.4,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(16.0),
+          return InkWell(
+            onTap: (() {
+              Get.to(const PadcastSingleView());
+            }),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                  index == padCastList.length - 1 ? 16 : 4,
+                  0,
+                  index == 0 ? 16 : 4,
+                  0),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: Get.height / 5.3,
+                      width: Get.width / 2.4,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(16.0),
+                        ),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                              padCastList[index].imageUrl!,
+                            ),
+                            fit: BoxFit.cover),
                       ),
-                      image: DecorationImage(
-                          image: NetworkImage(
-                            padCastList[index].imageUrl!,
-                          ),
-                          fit: BoxFit.cover),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: Get.width / 2.4,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      padCastList[index].title.toString(),
-                      style: TextStyles.styleTitlePadCastPostList,
+                  SizedBox(
+                    width: Get.width / 2.4,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        padCastList[index].title.toString(),
+                        style: TextStyles.styleTitlePadCastPostList,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         }),
@@ -111,7 +125,7 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  Widget recentNewsList(){
+  Widget recentNewsList() {
     return SizedBox(
       height: Get.height / 3.5,
       child: ListView.builder(
@@ -201,85 +215,80 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  Widget hotNewsList(){
+  Widget hotNewsList() {
     return SizedBox(
       height: Get.height / 2.2,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemBuilder: ((context, index) {
-          return Padding(
-            padding: EdgeInsets.fromLTRB(index == newsPost.length - 1 ? 24 : 8,
-                8, index == 0 ? 24 : 8, 8),
-            child: Stack(
-              children: [
-                Container(
-                  height: Get.height / 2.2,
-                  width: Get.width / 1.4,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                    image: DecorationImage(
-                        image: NetworkImage(
-                          newsPost[index].imageUrl.toString(),
-                        ),
-                        fit: BoxFit.cover),
-                  ),
-                ),
-                Positioned(
-                  bottom: 16,
-                  right: 16,
-                  left: 16,
-                  child: Container(
-                    width: Get.width / 1.6,
-                    height: Get.height / 5.5,
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        color: Colors.white),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(right: 8, left: 16, top: 8),
-                          child: Text(
-                            newsPost[index].title.toString(),
-                            style: TextStyles.styleTitleHotNewsPostList,
-                            maxLines: 3,
+          return InkWell(
+            onTap: () {
+              Get.to(const NewsSingleView());
+            },
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(index == newsPost.length - 1 ? 24 : 8,
+                  8, index == 0 ? 24 : 8, 8),
+              child: Stack(
+                children: [
+                  Container(
+                    height: Get.height / 2.2,
+                    width: Get.width / 1.4,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(15),
+                      ),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                            newsPost[index].imageUrl.toString(),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(newsPost[index].writer.toString(),
-                                  style: TextStyles
-                                      .styleWritreAndViewHotNewsPostList),
-                              Row(
-                                children: [
-                                  Text(newsPost[index].views.toString(),
-                                      style: TextStyles
-                                          .styleWritreAndViewHotNewsPostList),
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  const Icon(
-                                    Icons.remove_red_eye_rounded,
-                                    size: 22,
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                          fit: BoxFit.cover),
                     ),
                   ),
-                ),
-              ],
+                  Positioned(
+                    bottom: 16,
+                    right: 16,
+                    left: 16,
+                    child: Container(
+                      width: Get.width / 1.6,
+                      height: Get.height / 5.5,
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(right: 8, left: 16, top: 8),
+                            child: Text(
+                              newsPost[index].title.toString(),
+                              style: TextStyles.styleTitleHotNewsPostList,
+                              maxLines: 3,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(newsPost[index].writer.toString(),
+                                    style: TextStyles
+                                        .styleWritreAndViewHotNewsPostList),
+                                Text(
+                                  tagList[index].title!,
+                                  style: TextStyles.styleTagText,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         }),

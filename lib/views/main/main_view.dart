@@ -7,6 +7,7 @@ import 'package:vira_app/constant/string.dart';
 import 'package:vira_app/constant/styles/textstyle.dart';
 import 'package:vira_app/gen/assets.gen.dart';
 import 'package:vira_app/views/login_view.dart';
+import 'package:vira_app/views/main/bookmark_view.dart';
 import 'package:vira_app/views/main/profile_view.dart';
 import 'home_view.dart';
 
@@ -26,9 +27,10 @@ class MainView extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: SolidColors.bgScaffoldColor,
         key: _key,
         drawer: Drawer(
-          backgroundColor: SolidColors.appBar,
+          backgroundColor: SolidColors.appBarColor,
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(20, 6, 20, 0),
@@ -71,7 +73,7 @@ class MainView extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: SolidColors.appBar,
+          backgroundColor: SolidColors.appBarColor,
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -111,7 +113,7 @@ class MainView extends StatelessWidget {
                     const HomeView(),
                     Container(),
                     Container(),
-                    Container(),
+                    const BookmarkView(),
                     ProfileView(size: size, textTheme: textTheme),
                   ],
                 ),
@@ -124,8 +126,8 @@ class MainView extends StatelessWidget {
               right: 0,
               left: 0,
               child: Obx(
-                () => BottomNavigation(
-                  size: size,
+                () => bottomNavigation(
+                  context: context,
                   index: selectedIndexPage.value,
                   changeScreen: (value) {
                     selectedIndexPage.value = value;
@@ -134,6 +136,164 @@ class MainView extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget bottomNavigation(
+      {required BuildContext context,
+      required int index,
+      required Function(int) changeScreen}) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 28),
+      child: Container(
+        decoration: BoxDecoration(
+          color: SolidColors.bottomNavoff,
+          boxShadow: [
+            BoxShadow(
+              color: ShadowColors.shadowNav,
+              spreadRadius: 2,
+              blurRadius: 10,
+            ),
+          ],
+          borderRadius: const BorderRadius.all(
+            Radius.circular(1000),
+          ),
+        ),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(1000),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              //? home-0
+              Expanded(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  height: Get.height / 13.5,
+                  color: index == 0
+                      ? SolidColors.bottomNavon
+                      : SolidColors.bottomNavoff,
+                  child: IconButton(
+                    color: index == 0
+                        ? SolidColors.iconWhite
+                        : SolidColors.iconBlack,
+                    onPressed: () => changeScreen(0),
+                    icon: ImageIcon(
+                      AssetImage(index == 0
+                          ? Assets.icons.homeFill.path
+                          : Assets.icons.home.path),
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ),
+
+              //? search-1
+              Expanded(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  height: Get.height / 13.5,
+                  color: index == 1
+                      ? SolidColors.bottomNavon
+                      : SolidColors.bottomNavoff,
+                  child: IconButton(
+                    color: index == 1
+                        ? SolidColors.iconWhite
+                        : SolidColors.iconBlack,
+                    onPressed: () => changeScreen(1),
+                    icon: ImageIcon(
+                      AssetImage(
+                        index == 1
+                            ? Assets.icons.searchFill.path
+                            : Assets.icons.search.path,
+                      ),
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ),
+
+              //? add acrticle-2
+              Expanded(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  height: Get.height / 13.5,
+                  color: index == 2
+                      ? SolidColors.bottomNavon
+                      : SolidColors.bottomNavoff,
+                  child: IconButton(
+                    color: index == 2
+                        ? SolidColors.iconWhite
+                        : SolidColors.iconBlack,
+                    onPressed: () {
+                      _showSnackBarLogin(
+                          context,
+                          Strings.pleaseLoginForCreateArticleText,
+                          Strings.loginText, (() {
+                        Get.back();
+                        Get.to(const LogInView());
+                      }));
+                    },
+                    icon: ImageIcon(
+                      AssetImage(index == 2
+                          ? Assets.icons.addFill.path
+                          : Assets.icons.add.path),
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ),
+
+              //? bookmarks-3
+              Expanded(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  height: Get.height / 13.5,
+                  color: index == 3
+                      ? SolidColors.bottomNavon
+                      : SolidColors.bottomNavoff,
+                  child: IconButton(
+                    color: index == 3
+                        ? SolidColors.iconWhite
+                        : SolidColors.iconBlack,
+                    onPressed: () => changeScreen(3),
+                    icon: ImageIcon(
+                      AssetImage(index == 3
+                          ? Assets.icons.bookmarkFill.path
+                          : Assets.icons.bookmark.path),
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ),
+
+              //? profile-4
+              Expanded(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  height: Get.height / 13.5,
+                  color: index == 4
+                      ? SolidColors.bottomNavon
+                      : SolidColors.bottomNavoff,
+                  child: IconButton(
+                    color: index == 4
+                        ? SolidColors.iconWhite
+                        : SolidColors.iconBlack,
+                    onPressed: () => changeScreen(4),
+                    icon: ImageIcon(
+                      AssetImage(index == 4
+                          ? Assets.icons.userFill.path
+                          : Assets.icons.user.path),
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -156,7 +316,7 @@ class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20,right: 20,bottom: 28),
+      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 28),
       child: Container(
         decoration: BoxDecoration(
           color: SolidColors.bottomNavoff,
@@ -327,6 +487,4 @@ void _showSnackBarLogin(BuildContext context, String message, String textButton,
       backgroundColor: SolidColors.snackBarColor,
     ),
   );
-
-
 }

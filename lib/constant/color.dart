@@ -11,17 +11,18 @@ class SolidColors {
   static const Color dividerColor = Color.fromARGB(200, 95, 95, 95);
   static const Color hashTagColor = Color(0xffe1cafe);
   static const Color bgProfileFooter = Color.fromARGB(255, 233, 233, 233);
-  static const Color appBar = Color.fromARGB(255, 233, 233, 233);
+  static const Color appBarColor = Colors.white;
   static const Color snackBarColor = Color.fromARGB(255, 233, 233, 233);
   static const Color bgButtonProfile = Color.fromARGB(255, 255, 255, 255);
   static const Color btnOnPressed = Color.fromARGB(255, 55, 3, 122);
   static const Color hintText = Color.fromARGB(255, 219, 219, 219);
-  static const Color bgRegisterScreen = Color.fromARGB(255, 240, 240, 240);
+  static const Color bgScaffoldColor = Colors.white;
   static const Color textWhiteColor = Colors.white;
   static const Color googleColor = Color(0xffDB4437);
   static const Color facebookColor = Color(0xff4267B2);
   static const Color tagTextNewsSingleViewColor = Color(0xff228fe2);
-  static const Color bgContainerRelatedPostColor = Color.fromARGB(255, 231, 231, 231);
+  static const Color bgContainerRelatedPostColor =
+      Color.fromARGB(255, 231, 231, 231);
 
   static const Color textBlackColor = Colors.black;
 }
