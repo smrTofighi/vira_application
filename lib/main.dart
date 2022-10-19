@@ -17,7 +17,6 @@ void main() {
   //? for change color statusbar
 
   runApp(const ViraApp());
-  //? runapp
 }
 
 class ViraApp extends StatelessWidget {
